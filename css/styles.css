@@ -42,14 +42,21 @@
   }
 
   .card-price {
-    color: green;
+    color: black;
+    background: white;
   }
 
   .price_like {
     display: flex;
+    flex-direction: column;
   }
 
   .heart {
     margin-left: auto;
     color: red;
+  }
+
+  .better_price {
+    color: green;
+    font: bold;
   }
