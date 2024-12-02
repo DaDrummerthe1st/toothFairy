@@ -2,31 +2,35 @@ $(document).ready(function () {
     // $('html').css("background-color", "yellow"); // works!
     // $("#results").css("background-color", "red");
     // cards
-    var toothbrushes = ['Oral-B Pro-Flex',
-        'Colgate 360° Advanced',
-        'Philips Sonicare DiamondClean',
-        'Quip Electric Toothbrush',
-        'Foreo ISSA 3',
-        'Waterpik Sonic-Fusion',
-        'GUM Crayola Marker Toothbrush',
-        'Radius Source Toothbrush',
-        'Dr. Plotka’s Mouthwatchers'];
+    var toothbrushes = [
+        ['resources/pictures/pics_of_brushes/bild (1).png','5-pack Bamsetandborstar', 63, '0-3 år', 'Bamsetandborste som får ditt barn att vilja gå o lägga sig!'],
+        ['resources/pictures/pics_of_brushes/bild (2).png','3-pack Colgate Kids', 49, '3-7 år', 'Prisvärt set om 3 manuella tandborstar'],
+        ['resources/pictures/pics_of_brushes/bild (3).png','Quip Electric Toothbrush', 187, '0-10 år (beroende på tandborsthuvud)', 'Tandborstarnas Rolls Royce med häftigt motiv, play-as-u-brush och PlaqueOff-teknik! Kanske den bästa tandborsten för barn, som någonsin tillverkats'],
+        ['resources/pictures/pics_of_brushes/bild (4).png','Foreo ISSA 6-pack', 43, '3-10 år', 'Mycket prisvärt set med 6 attraktiva tandborstar'],
+        ['resources/pictures/pics_of_brushes/bild (5).png','Bamsetandborste', 18, '0-3 år', 'Lila Bamsetandborste med både motiv och antibactisoft-teknik'],
+        ['resources/pictures/pics_of_brushes/bild (6).png','Crayola Marker Electric', 135, '0-3 år', 'En underhållande eltandborste som spelar en melodi samtidigt som du effektivt och mycket skonsamt gör rent dina barns tänder'],
+        ['resources/pictures/pics_of_brushes/bild (7).png','Bamsetandborste 0-3 år', 19, '5-10 år', 'En Bamsetandborste som gör andra barn avundsjuka!'],
+        ['resources/pictures/pics_of_brushes/bild (8).png','TP Kids 0-3 år', 14, '3-5 år', 'En personlig och prisvärd tandborste för de minsta']
+    ];
 
-    for (let i = 1; i < 4; i++) {
-        for (let j = 1; j < 4; j++) {
-            let card = $(`
+    for (let i = 0; i < 9; i++) {
+        console.log("har körts " + i + " gånger");
+        let card = $(`
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="resources/pictures/PineTools.com_files/row-${i}-column-${j}.png" alt="Card image cap">
+                    <span class="tooltip">${toothbrushes[i][4]}</span>
+                    <img class="card-img-top" src="${toothbrushes[i][0]}" alt="Card image cap">
                     <div class="card-body">
-                    <h5 class="card-title">${toothbrushes[i*j]}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title">${toothbrushes[i][1]}</h5>
+                    <div class="price_like">
+                        <h4 class="card-price">${toothbrushes[i][2]} Kr</h4>
+                        <span class="material-icons heart">favorite</span>
+                    </div>
+                    <p class="card-text">${toothbrushes[i][3]}</p>
                     <a href="#" class="btn btn-primary">Lägg i varukorg</a>
-                    <a href="#" class="btn btn-primary">Som prenumeration</a>
                     </div>
                 </div>
             `);
 
-            $(card).appendTo("#results");
-        }
+        $(card).appendTo("#results");
     }
 });
